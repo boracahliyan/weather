@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id= "search_bar">
+        <label for="text">Name of the city</label>
+        <input id="city_name" type="text" placeholder="Berlin">
+        <ul id="autocomplete">
+          
+        </ul>
+        <button id="Enter_button">Enter</button>
+    </div>
+
+    <div class="weather-container">
+        <!-- Input fields to take user city coordinates -->
+        <h2>Live Weather</h2>
+        <p>Location: <span id="location">Loading...</span></p>
+        <p>Temperature: <span id="temperature">--</span>°C</p>
+        <p>Wind Speed: <span id="windspeed">--</span> km/h</p>
+    </div>
+
+    <!-- Link your external JavaScript file -->
+    <script src="app.js"></script>
+</body>
+</html>
