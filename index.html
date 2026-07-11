@@ -11,21 +11,59 @@
     <div id= "search_bar">
         <label for="text">Name of the city</label>
         <input id="city_name" type="text" placeholder="Berlin">
-        <ul id="autocomplete">
-          
-        </ul>
+        <ul id="autocomplete"></ul>
         <button id="Enter_button">Enter</button>
     </div>
 
     <div class="weather-container">
         <!-- Input fields to take user city coordinates -->
-        <h2>Live Weather</h2>
-        <p>Location: <span id="location">Loading...</span></p>
+        <h2>Current Weather</h2>
+        
         <p>Temperature: <span id="temperature">--</span>°C</p>
-        <p>Wind Speed: <span id="windspeed">--</span> km/h</p>
     </div>
 
+       
+    <table class="table">
+        
+        <tr>
+            <th>00:00</th>
+            <th>01:00</th>
+            <th>02:00</th>
+            <th>03:00</th>
+            <th>04:00</th>
+            <th>05:00</th>
+            <th>06:00</th>
+            <th>07:00</th>
+            <th>08:00</th>
+            <th>09:00</th>
+            <th>10:00</th>
+            <th>11:00</th>
+            <th>12:00</th>
+            <th>13:00</th>
+            <th>14:00</th>
+            <th>15:00</th>
+            <th>16:00</th>
+            <th>17:00</th>
+            <th>18:00</th>
+            <th>19:00</th>
+            <th>20:00</th>
+            <th>21:00</th>
+            <th>22:00</th>
+            <th>23:00</th>
+        </tr>
+
+        <tr class="hourly_temp">
+           
+        </tr>
+
+    </table>
+
+
+        <div id="deneme_yeri">
+
+        </div>
+
     <!-- Link your external JavaScript file -->
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 </html>

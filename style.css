@@ -1,4 +1,18 @@
 
+body{
+   
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    
+   
+
+}
+
+
 #search_bar{
     background-color: rgba(255, 0, 0, 0.39);
     display: flex;
@@ -24,4 +38,32 @@
 #city_name:focus + #autocomplete {
     position: absolute;
     display: block;
+}
+
+
+table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-collapse: collapse; /* Prevents double borders */
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: none;
+   
+}
+
+/* Styles both header and data cells */
+table th, table td {
+    
+    border: 1px solid #ccc;
+    padding: .3vw;
+    background-color: white;
+}
+
+/* Gives the header row a distinct background */
+table th {
+    background-color: #f2f2f2;
+    font-size: 0.9rem;
 }
