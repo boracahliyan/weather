@@ -34,10 +34,11 @@ async function getter() {
         console.log("Please Enter a valid name");
     }
 
+    document.getElementById("city").textContent = data_cor.results[0].name;
+
     console.log(lan,lon);
 
-    const apiurl_weather = `https://api.open-meteo.com/v1/forecast?latitude=${lan}&longitude=${lon}&hourly=temperature_2m&current=temperature_2m&timezone=auto&forecast_days=1`;
-
+    const apiurl_weather = `https://api.open-meteo.com/v1/forecast?latitude=${lan}&longitude=${lon}&hourly=temperature_2m,rain&current=temperature_2m,rain&timezone=auto&forecast_days=1`;
 
     const raw_data_wet = await fetch(apiurl_weather);
     const data_wet = await raw_data_wet.json();
@@ -45,6 +46,29 @@ async function getter() {
     console.log(data_wet);
 
     document.getElementById("temperature").textContent = data_wet.current.temperature_2m;
+
+    let current_rain =  data_wet.current.rain;
+    let weather_emoji;
+
+    if (current_rain === 0) {
+            weather_emoji = "☀️";
+        } else if (current_rain > 0 && current_rain <= 2.5) {
+            weather_emoji = "🌦️";
+        } else if (current_rain > 2.5 && current_rain <= 7.6) {
+            weather_emoji = "🌧️";
+        } else {
+            weather_emoji = "⛈️";
+        }
+
+
+
+
+
+
+
+
+
+    document.getElementById("Weather_emo").textContent = weather_emoji;
     document.querySelector(".hourly_temp").innerHTML = "";
 
     for (let hour = 0; hour <= 23; hour++) {
@@ -54,7 +78,35 @@ async function getter() {
         
     }
 
-    document.querySelector(".table").style.display = 'block';
+    document.querySelector(".hourly_rain").innerHTML = "";
+
+    for (let hour = 0; hour <= 23; hour++) {
+        
+        const table_data = document.createElement("td");
+
+        let rain_per = data_wet.hourly.rain[hour];
+
+
+       if (rain_per === 0) {
+            weather_emoji = "☀️";
+        } else if (rain_per > 0 && rain_per <= 2.5) {
+            weather_emoji = "🌦️";
+        } else if (rain_per > 2.5 && rain_per <= 7.6) {
+            weather_emoji = "🌧️";
+        } else {
+            weather_emoji = "⛈️";
+        }
+
+        table_data.textContent = weather_emoji;
+
+        document.querySelector(".hourly_rain").appendChild(table_data);
+    
+    }   
+
+
+    
+    document.querySelectorAll(".table").forEach(table => {
+        table.style.display = 'table';});
 
 
 
