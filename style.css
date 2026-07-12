@@ -141,7 +141,7 @@ body{
 
 
 .table {
-    width: 100%;
+   
     border-collapse: collapse; 
     margin-top: 20px;
     font-family: Arial, sans-serif;
@@ -163,4 +163,31 @@ body{
 
 .table th {
     background: rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 48rem) {
+   
+    body{
+      overflow: hidden;
+    }
+
+
+    /* 2. Break the flex layout on the tables container */
+    .tables {
+        width: 100%;
+        align-self: flex-start;
+    }
+
+    /* 3. Make the tables horizontally scrollable */
+    .table {
+       
+        width: 100%;
+        overflow-x: auto;
+        margin: 1rem;
+    }
+    
+   
+    .table th, .table td {
+        padding: .5rem 1rem; 
+    }
 }

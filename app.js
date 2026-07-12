@@ -106,7 +106,7 @@ async function getter() {
 
     
     document.querySelectorAll(".table").forEach(table => {
-        table.style.display = 'table';});
+        table.style.display = 'block';});
 
 
 
